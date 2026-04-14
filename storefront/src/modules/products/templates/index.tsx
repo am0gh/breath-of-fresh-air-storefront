@@ -27,42 +27,64 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
   }
 
   return (
-    <>
+    <div className="bg-cream">
+      {/* Product main section */}
       <div
-        className="content-container flex flex-col small:flex-row small:items-start py-6 relative"
+        className="content-container py-10 small:py-16"
         data-testid="product-container"
       >
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-6">
-          <ProductInfo product={product} />
-          <ProductTabs product={product} />
-        </div>
-        <div className="block w-full relative">
-          <ImageGallery images={product?.images || []} />
-        </div>
-        <div className="flex flex-col small:sticky small:top-48 small:py-0 small:max-w-[300px] w-full py-8 gap-y-12">
-          <ProductOnboardingCta />
-          <Suspense
-            fallback={
-              <ProductActions
-                disabled={true}
-                product={product}
-                region={region}
-              />
-            }
-          >
-            <ProductActionsWrapper id={product.id} region={region} />
-          </Suspense>
+        <div className="flex flex-col small:flex-row gap-x-12 gap-y-10">
+          {/* Left: images */}
+          <div className="w-full small:w-3/5 relative">
+            <ImageGallery images={product?.images || []} />
+          </div>
+
+          {/* Right: product info + actions */}
+          <div className="w-full small:w-2/5 flex flex-col gap-y-8 small:sticky small:top-24 small:self-start">
+            {/* Product info */}
+            <ProductInfo product={product} />
+
+            {/* Hemp material callout */}
+            <div className="border-l-2 border-sage bg-cream/60 px-4 py-3">
+              <p className="text-bark/70 text-sm italic leading-relaxed">
+                Woven from 100% industrial hemp — naturally breathable, UV
+                resistant, and built to outlast fast fashion.
+              </p>
+            </div>
+
+            {/* Tabs (shipping, returns, etc.) */}
+            <ProductTabs product={product} />
+
+            {/* Add to cart */}
+            <ProductOnboardingCta />
+            <Suspense
+              fallback={
+                <ProductActions
+                  disabled={true}
+                  product={product}
+                  region={region}
+                />
+              }
+            >
+              <ProductActionsWrapper id={product.id} region={region} />
+            </Suspense>
+          </div>
         </div>
       </div>
+
+      {/* Related products */}
       <div
-        className="content-container my-16 small:my-32"
+        className="content-container py-12 border-t border-sage/20"
         data-testid="related-products-container"
       >
+        <h2 className="font-display text-2xl text-olive font-light mb-8">
+          You may also like
+        </h2>
         <Suspense fallback={<SkeletonRelatedProducts />}>
           <RelatedProducts product={product} countryCode={countryCode} />
         </Suspense>
       </div>
-    </>
+    </div>
   )
 }
 

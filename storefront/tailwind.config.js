@@ -34,6 +34,11 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        olive: "#42481D",
+        terracotta: "#B6592E",
+        sage: "#818E83",
+        cream: "#F5F0E8",
+        bark: "#2C2A1E",
       },
       borderRadius: {
         none: "0px",
@@ -60,7 +65,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "DM Sans",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
@@ -68,6 +73,11 @@ module.exports = {
           "Helvetica Neue",
           "Ubuntu",
           "sans-serif",
+        ],
+        display: [
+          "Cormorant Garamond",
+          "Georgia",
+          "serif",
         ],
       },
       keyframes: {

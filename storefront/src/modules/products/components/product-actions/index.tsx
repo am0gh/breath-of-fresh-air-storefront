@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@medusajs/ui"
 import { isEqual } from "lodash"
 import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
@@ -57,7 +56,6 @@ export default function ProductActions({
     })
   }, [product.variants, options])
 
-  // update the options when a variant is selected
   const setOptionValue = (title: string, value: string) => {
     setOptions((prev) => ({
       ...prev,
@@ -65,35 +63,25 @@ export default function ProductActions({
     }))
   }
 
-  // check if the selected variant is in stock
   const inStock = useMemo(() => {
-    // If we don't manage inventory, we can always add to cart
     if (selectedVariant && !selectedVariant.manage_inventory) {
       return true
     }
-
-    // If we allow back orders on the variant, we can add to cart
     if (selectedVariant?.allow_backorder) {
       return true
     }
-
-    // If there is inventory available, we can add to cart
     if (
       selectedVariant?.manage_inventory &&
       (selectedVariant?.inventory_quantity || 0) > 0
     ) {
       return true
     }
-
-    // Otherwise, we can't add to cart
     return false
   }, [selectedVariant])
 
   const actionsRef = useRef<HTMLDivElement>(null)
-
   const inView = useIntersection(actionsRef, "0px")
 
-  // add the selected variant to the cart
   const handleAddToCart = async () => {
     if (!selectedVariant?.id) return null
 
@@ -108,47 +96,56 @@ export default function ProductActions({
     setIsAdding(false)
   }
 
+  const isDisabled = !inStock || !selectedVariant || !!disabled || isAdding
+
   return (
     <>
-      <div className="flex flex-col gap-y-2" ref={actionsRef}>
-        <div>
-          {(product.variants?.length ?? 0) > 1 && (
-            <div className="flex flex-col gap-y-4">
-              {(product.options || []).map((option) => {
-                return (
-                  <div key={option.id}>
-                    <OptionSelect
-                      option={option}
-                      current={options[option.title ?? ""]}
-                      updateOption={setOptionValue}
-                      title={option.title ?? ""}
-                      data-testid="product-options"
-                      disabled={!!disabled || isAdding}
-                    />
-                  </div>
-                )
-              })}
-              <Divider />
-            </div>
-          )}
+      <div className="flex flex-col gap-y-4" ref={actionsRef}>
+        {/* Options */}
+        {(product.variants?.length ?? 0) > 1 && (
+          <div className="flex flex-col gap-y-4">
+            {(product.options || []).map((option) => (
+              <div key={option.id}>
+                <OptionSelect
+                  option={option}
+                  current={options[option.title ?? ""]}
+                  updateOption={setOptionValue}
+                  title={option.title ?? ""}
+                  data-testid="product-options"
+                  disabled={!!disabled || isAdding}
+                />
+              </div>
+            ))}
+            <Divider />
+          </div>
+        )}
+
+        {/* Price */}
+        <div className="text-bark font-semibold text-lg">
+          <ProductPrice product={product} variant={selectedVariant} />
         </div>
 
-        <ProductPrice product={product} variant={selectedVariant} />
-
-        <Button
+        {/* Add to cart */}
+        <button
           onClick={handleAddToCart}
-          disabled={!inStock || !selectedVariant || !!disabled || isAdding}
-          variant="primary"
-          className="w-full h-10"
-          isLoading={isAdding}
+          disabled={isDisabled}
           data-testid="add-product-button"
+          className={[
+            "w-full py-4 text-sm tracking-widest uppercase transition-all duration-200",
+            isDisabled
+              ? "bg-sage/40 text-bark/40 cursor-not-allowed"
+              : "bg-terracotta text-white hover:bg-terracotta/90 cursor-pointer",
+          ].join(" ")}
         >
-          {!selectedVariant
+          {isAdding
+            ? "Adding..."
+            : !selectedVariant
             ? "Select variant"
             : !inStock
             ? "Out of stock"
             : "Add to cart"}
-        </Button>
+        </button>
+
         <MobileActions
           product={product}
           variant={selectedVariant}

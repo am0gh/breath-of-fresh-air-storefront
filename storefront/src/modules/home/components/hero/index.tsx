@@ -1,34 +1,47 @@
-import { Github } from "@medusajs/icons"
-import { Button, Heading } from "@medusajs/ui"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 const Hero = () => {
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
-        <span>
-          <Heading
-            level="h1"
-            className="text-3xl leading-10 text-ui-fg-base font-normal"
-          >
-            Well done! You have successfully deployed your Medusa 2.0 store on Railway!
-          </Heading>
-          <Heading
-            level="h2"
-            className="text-3xl leading-10 text-ui-fg-subtle font-normal"
-          >
-            Need help customizing your store?
-          </Heading>
-        </span>
-        <a
-          href="https://funkyton.com/medusajs-2-0-is-finally-here/"
-          target="_blank"
+    <section className="w-full bg-cream">
+      {/* Hero */}
+      <div className="content-container py-24 small:py-36 flex flex-col items-center text-center gap-y-6">
+        <h1 className="font-display text-5xl small:text-7xl leading-tight text-olive font-light tracking-tight">
+          Wear the Earth
+        </h1>
+        <p className="text-sage text-lg small:text-xl max-w-md font-light leading-relaxed">
+          Hemp jackets crafted for the conscious explorer
+        </p>
+        <LocalizedClientLink
+          href="/store"
+          className="mt-4 inline-block bg-terracotta text-white text-sm tracking-widest uppercase px-10 py-4 hover:bg-terracotta/90 transition-colors duration-200"
         >
-          <h1 style={{ textDecoration: "underline" }}>
-            Visit the tutorial
-          </h1>
-        </a>
+          Shop Jackets
+        </LocalizedClientLink>
       </div>
-    </div>
+
+      {/* Thin rule */}
+      <div className="border-t border-sage/20" />
+
+      {/* Brand values strip */}
+      <div className="content-container py-10">
+        <div className="grid grid-cols-1 small:grid-cols-3 gap-6 text-center">
+          {[
+            "100% Hemp Fabric",
+            "Carbon Neutral Shipping",
+            "Made to Last",
+          ].map((value) => (
+            <div key={value} className="py-4">
+              <p className="font-display text-lg text-olive tracking-wide">
+                {value}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Thin rule */}
+      <div className="border-t border-sage/20" />
+    </section>
   )
 }
 

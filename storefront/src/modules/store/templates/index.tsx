@@ -19,22 +19,41 @@ const StoreTemplate = ({
   const sort = sortBy || "created_at"
 
   return (
-    <div
-      className="flex flex-col small:flex-row small:items-start py-6 content-container"
-      data-testid="category-container"
-    >
-      <RefinementList sortBy={sort} />
-      <div className="w-full">
-        <div className="mb-8 text-2xl-semi">
-          <h1 data-testid="store-page-title">All products</h1>
+    <div className="bg-cream min-h-screen">
+      <div className="content-container py-12">
+        {/* Page heading */}
+        <div className="mb-10 border-b border-sage/20 pb-6">
+          <h1
+            className="font-display text-4xl text-olive font-light tracking-wide"
+            data-testid="store-page-title"
+          >
+            Hemp Jackets
+          </h1>
+          <p className="text-sage mt-2 text-sm">
+            Sustainably made. Built to last.
+          </p>
         </div>
-        <Suspense fallback={<SkeletonProductGrid />}>
-          <PaginatedProducts
-            sortBy={sort}
-            page={pageNumber}
-            countryCode={countryCode}
-          />
-        </Suspense>
+
+        <div
+          className="flex flex-col small:flex-row small:items-start gap-8"
+          data-testid="category-container"
+        >
+          {/* Filters sidebar */}
+          <aside className="small:min-w-[200px]">
+            <RefinementList sortBy={sort} />
+          </aside>
+
+          {/* Product grid */}
+          <div className="w-full">
+            <Suspense fallback={<SkeletonProductGrid />}>
+              <PaginatedProducts
+                sortBy={sort}
+                page={pageNumber}
+                countryCode={countryCode}
+              />
+            </Suspense>
+          </div>
+        </div>
       </div>
     </div>
   )
