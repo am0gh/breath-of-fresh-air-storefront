@@ -1,4 +1,3 @@
-import { Button } from "@medusajs/ui"
 import { useMemo } from "react"
 
 import Thumbnail from "@modules/products/components/thumbnail"
@@ -24,11 +23,11 @@ const OrderCard = ({ order }: OrderCardProps) => {
   }, [order])
 
   return (
-    <div className="bg-white flex flex-col" data-testid="order-card">
-      <div className="uppercase text-large-semi mb-1">
+    <div className="bg-cream flex flex-col border border-sage/20 p-4" data-testid="order-card">
+      <div className="uppercase text-sm font-semibold text-olive mb-1">
         #<span data-testid="order-display-id">{order.display_id}</span>
       </div>
-      <div className="flex items-center divide-x divide-gray-200 text-small-regular text-ui-fg-base">
+      <div className="flex items-center divide-x divide-sage/20 text-sm text-bark/60">
         <span className="pr-2" data-testid="order-created-at">
           {new Date(order.created_at).toDateString()}
         </span>
@@ -51,9 +50,9 @@ const OrderCard = ({ order }: OrderCardProps) => {
               data-testid="order-item"
             >
               <Thumbnail thumbnail={i.thumbnail} images={[]} size="full" />
-              <div className="flex items-center text-small-regular text-ui-fg-base">
+              <div className="flex items-center text-sm text-bark/60">
                 <span
-                  className="text-ui-fg-base font-semibold"
+                  className="text-bark font-medium"
                   data-testid="item-title"
                 >
                   {i.title}
@@ -66,18 +65,21 @@ const OrderCard = ({ order }: OrderCardProps) => {
         })}
         {numberOfProducts > 4 && (
           <div className="w-full h-full flex flex-col items-center justify-center">
-            <span className="text-small-regular text-ui-fg-base">
+            <span className="text-sm text-bark/50">
               + {numberOfLines - 4}
             </span>
-            <span className="text-small-regular text-ui-fg-base">more</span>
+            <span className="text-sm text-bark/50">more</span>
           </div>
         )}
       </div>
       <div className="flex justify-end">
         <LocalizedClientLink href={`/account/orders/details/${order.id}`}>
-          <Button data-testid="order-details-link" variant="secondary">
+          <button
+            data-testid="order-details-link"
+            className="px-4 py-2 border border-olive text-olive text-sm hover:bg-olive hover:text-cream transition-colors tracking-wider"
+          >
             See details
-          </Button>
+          </button>
         </LocalizedClientLink>
       </div>
     </div>

@@ -12,7 +12,7 @@ import { getCustomer } from "@lib/data/customer"
 
 export const metadata: Metadata = {
   title: "Profile",
-  description: "View and edit your Medusa Store profile.",
+  description: "View and edit your Breath of Fresh Air profile.",
 }
 
 export default async function Profile() {
@@ -49,5 +49,5 @@ export default async function Profile() {
 }
 
 const Divider = () => {
-  return <div className="w-full h-px bg-gray-200" />
+  return <div className="w-full h-px bg-sage/20" />
 }

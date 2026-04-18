@@ -131,7 +131,7 @@ export default function ProductActions({
           disabled={isDisabled}
           data-testid="add-product-button"
           className={[
-            "w-full py-4 text-sm tracking-widest uppercase transition-all duration-200",
+            "w-full py-4 text-sm tracking-widest uppercase transition-all duration-200 rounded",
             isDisabled
               ? "bg-sage/40 text-bark/40 cursor-not-allowed"
               : "bg-terracotta text-white hover:bg-terracotta/90 cursor-pointer",

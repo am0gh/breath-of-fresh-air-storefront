@@ -1,6 +1,6 @@
 "use client"
 
-import { useFormState } from "react-dom"
+import { useActionState } from "react"
 
 import Input from "@modules/common/components/input"
 import { LOGIN_VIEW } from "@modules/account/templates/login-template"
@@ -14,22 +14,21 @@ type Props = {
 }
 
 const Register = ({ setCurrentView }: Props) => {
-  const [message, formAction] = useFormState(signup, null)
+  const [message, formAction] = useActionState(signup, null)
 
   return (
     <div
-      className="max-w-sm flex flex-col items-center"
+      className="w-full flex flex-col"
       data-testid="register-page"
     >
-      <h1 className="text-large-semi uppercase mb-6">
-        Become a Medusa Store Member
+      <h1 className="font-display text-3xl text-olive font-light tracking-wide mb-2">
+        Create Account
       </h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-4">
-        Create your Medusa Store Member profile, and get access to an enhanced
-        shopping experience.
+      <p className="text-bark/60 text-sm mb-8">
+        Join us for a better shopping experience.
       </p>
       <form className="w-full flex flex-col" action={formAction}>
-        <div className="flex flex-col w-full gap-y-2">
+        <div className="flex flex-col w-full gap-y-3">
           <Input
             label="First name"
             name="first_name"
@@ -69,37 +68,36 @@ const Register = ({ setCurrentView }: Props) => {
           />
         </div>
         <ErrorMessage error={message} data-testid="register-error" />
-        <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to Medusa Store&apos;s{" "}
+        <p className="text-center text-bark/50 text-xs mt-6">
+          By creating an account, you agree to our{" "}
           <LocalizedClientLink
             href="/content/privacy-policy"
-            className="underline"
+            className="underline hover:text-terracotta transition-colors"
           >
             Privacy Policy
           </LocalizedClientLink>{" "}
           and{" "}
           <LocalizedClientLink
             href="/content/terms-of-use"
-            className="underline"
+            className="underline hover:text-terracotta transition-colors"
           >
             Terms of Use
           </LocalizedClientLink>
           .
-        </span>
-        <SubmitButton className="w-full mt-6" data-testid="register-button">
-          Join
+        </p>
+        <SubmitButton className="w-full mt-4" data-testid="register-button">
+          Create Account
         </SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        Already a member?{" "}
+      <p className="text-center text-bark/60 text-sm mt-6">
+        Already have an account?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
-          className="underline"
+          className="text-terracotta hover:text-terracotta/80 underline underline-offset-2 transition-colors"
         >
           Sign in
         </button>
-        .
-      </span>
+      </p>
     </div>
   )
 }

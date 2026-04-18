@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from "react"
 import { PencilSquare as Edit, Trash } from "@medusajs/icons"
-import { Button, Heading, Text, clx } from "@medusajs/ui"
+import { Button, clx } from "@medusajs/ui"
 
 import useToggleState from "@lib/hooks/use-toggle-state"
 import CountrySelect from "@modules/checkout/components/country-select"
 import Input from "@modules/common/components/input"
 import Modal from "@modules/common/components/modal"
 import Spinner from "@modules/common/icons/spinner"
-import { useFormState } from "react-dom"
+import { useActionState } from "react"
 import { SubmitButton } from "@modules/checkout/components/submit-button"
 import { HttpTypes } from "@medusajs/types"
 import {
@@ -32,7 +32,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
   const [successState, setSuccessState] = useState(false)
   const { state, open, close: closeModal } = useToggleState(false)
 
-  const [formState, formAction] = useFormState(updateCustomerAddress, {
+  const [formState, formAction] = useActionState(updateCustomerAddress, {
     success: false,
     error: null,
     addressId: address.id,
@@ -68,7 +68,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
         className={clx(
           "border rounded-rounded p-5 min-h-[220px] h-full w-full flex flex-col justify-between transition-colors",
           {
-            "border-gray-900": isActive,
+            "border-bark": isActive,
           }
         )}
         data-testid="address-container"
@@ -81,14 +81,14 @@ const EditAddress: React.FC<EditAddressProps> = ({
             {address.first_name} {address.last_name}
           </Heading>
           {address.company && (
-            <Text
-              className="txt-compact-small text-ui-fg-base"
+            <span
+              className="text-sm text-bark/70"
               data-testid="address-company"
             >
               {address.company}
             </Text>
           )}
-          <Text className="flex flex-col text-left text-base-regular mt-2">
+          <div className="flex flex-col text-left text-sm text-bark/60 mt-2">
             <span data-testid="address-address">
               {address.address_1}
               {address.address_2 && <span>, {address.address_2}</span>}
@@ -100,11 +100,11 @@ const EditAddress: React.FC<EditAddressProps> = ({
               {address.province && `${address.province}, `}
               {address.country_code?.toUpperCase()}
             </span>
-          </Text>
+          </div>
         </div>
         <div className="flex items-center gap-x-4">
           <button
-            className="text-small-regular text-ui-fg-base flex items-center gap-x-2"
+            className="text-sm text-bark/60 hover:text-terracotta flex items-center gap-x-2 transition-colors"
             onClick={open}
             data-testid="address-edit-button"
           >
@@ -112,7 +112,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
             Edit
           </button>
           <button
-            className="text-small-regular text-ui-fg-base flex items-center gap-x-2"
+            className="text-sm text-bark/60 hover:text-terracotta flex items-center gap-x-2 transition-colors"
             onClick={removeAddress}
             data-testid="address-delete-button"
           >

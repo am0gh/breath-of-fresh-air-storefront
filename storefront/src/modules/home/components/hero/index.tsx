@@ -10,7 +10,7 @@ const Hero = () => {
           width: 100%;
           height: 100svh;
           min-height: 600px;
-          background-color: rgba(228, 228, 231, 1);
+          background-color: rgba(228, 224, 214, 1);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -290,6 +290,7 @@ const Hero = () => {
           text-decoration: none;
           border: 1px solid #42481D;
           padding: 0.9rem 2.5rem;
+          border-radius: 4px;
           position: relative;
           overflow: hidden;
           transition: color 0.4s ease;

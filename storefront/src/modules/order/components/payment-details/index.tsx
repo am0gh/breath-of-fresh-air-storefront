@@ -1,5 +1,3 @@
-import { Container, Heading, Text } from "@medusajs/ui"
-
 import { isStripe, paymentInfoMap } from "@lib/constants"
 import Divider from "@modules/common/components/divider"
 import { convertToLocale } from "@lib/util/money"
@@ -14,32 +12,23 @@ const PaymentDetails = ({ order }: PaymentDetailsProps) => {
 
   return (
     <div>
-      <Heading level="h2" className="flex flex-row text-3xl-regular my-6">
-        Payment
-      </Heading>
+      <h2 className="font-display text-2xl text-olive font-light my-6">Payment</h2>
       <div>
         {payment && (
-          <div className="flex items-start gap-x-1 w-full">
+          <div className="flex items-start gap-x-8 w-full text-sm text-bark/70">
             <div className="flex flex-col w-1/3">
-              <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                Payment method
-              </Text>
-              <Text
-                className="txt-medium text-ui-fg-subtle"
-                data-testid="payment-method"
-              >
+              <p className="font-medium text-bark mb-1">Payment method</p>
+              <p data-testid="payment-method">
                 {paymentInfoMap[payment.provider_id].title}
-              </Text>
+              </p>
             </div>
             <div className="flex flex-col w-2/3">
-              <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                Payment details
-              </Text>
-              <div className="flex gap-2 txt-medium text-ui-fg-subtle items-center">
-                <Container className="flex items-center h-7 w-fit p-2 bg-ui-button-neutral-hover">
+              <p className="font-medium text-bark mb-1">Payment details</p>
+              <div className="flex gap-2 items-center">
+                <div className="flex items-center h-7 w-fit p-2 bg-sage/10 border border-sage/20">
                   {paymentInfoMap[payment.provider_id].icon}
-                </Container>
-                <Text data-testid="payment-amount">
+                </div>
+                <p data-testid="payment-amount">
                   {isStripe(payment.provider_id) && payment.data?.card_last4
                     ? `**** **** **** ${payment.data.card_last4}`
                     : `${convertToLocale({
@@ -48,13 +37,12 @@ const PaymentDetails = ({ order }: PaymentDetailsProps) => {
                       })} paid at ${new Date(
                         payment.created_at ?? ""
                       ).toLocaleString()}`}
-                </Text>
+                </p>
               </div>
             </div>
           </div>
         )}
       </div>
-
       <Divider className="mt-8" />
     </div>
   )

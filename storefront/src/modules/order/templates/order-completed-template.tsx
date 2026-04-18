@@ -1,4 +1,3 @@
-import { Heading } from "@medusajs/ui"
 import { cookies } from "next/headers"
 
 import CartTotals from "@modules/common/components/cart-totals"
@@ -20,24 +19,23 @@ export default function OrderCompletedTemplate({
   const isOnboarding = cookies().get("_medusa_onboarding")?.value === "true"
 
   return (
-    <div className="py-6 min-h-[calc(100vh-64px)]">
+    <div className="py-12 min-h-[calc(100vh-64px)] bg-cream">
       <div className="content-container flex flex-col justify-center items-center gap-y-10 max-w-4xl h-full w-full">
         {isOnboarding && <OnboardingCta orderId={order.id} />}
         <div
-          className="flex flex-col gap-4 max-w-4xl h-full bg-white w-full py-10"
+          className="flex flex-col gap-6 max-w-4xl h-full bg-cream border border-sage/20 w-full px-8 py-10"
           data-testid="order-complete-container"
         >
-          <Heading
-            level="h1"
-            className="flex flex-col gap-y-3 text-ui-fg-base text-3xl mb-4"
-          >
-            <span>Thank you!</span>
-            <span>Your order was placed successfully.</span>
-          </Heading>
+          <div className="flex flex-col gap-y-2 mb-4 pb-6 border-b border-sage/20">
+            <h1 className="font-display text-4xl text-olive font-light tracking-wide">
+              Thank you!
+            </h1>
+            <p className="text-bark/60 text-sm">
+              Your order was placed successfully. We&apos;ll send you a confirmation shortly.
+            </p>
+          </div>
           <OrderDetails order={order} />
-          <Heading level="h2" className="flex flex-row text-3xl-regular">
-            Summary
-          </Heading>
+          <h2 className="font-display text-2xl text-olive font-light">Order Summary</h2>
           <Items items={order.items} />
           <CartTotals totals={order} />
           <ShippingDetails order={order} />

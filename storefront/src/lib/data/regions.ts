@@ -37,9 +37,10 @@ export const getRegion = cache(async function (countryCode: string) {
       })
     })
 
-    const region = countryCode
-      ? regionMap.get(countryCode)
-      : regionMap.get("us")
+    // Look up the region by country code. If not found (e.g. when using a
+    // virtual prefix like "eu"), fall back to the first available region so
+    // a single EU region in Medusa always works regardless of URL prefix.
+    const region = regionMap.get(countryCode) ?? regions[0]
 
     return region
   } catch (e: any) {

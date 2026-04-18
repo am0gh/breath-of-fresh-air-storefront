@@ -1,23 +1,20 @@
-import { Heading, Text } from "@medusajs/ui"
-
-import InteractiveLink from "@modules/common/components/interactive-link"
+import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 const EmptyCartMessage = () => {
   return (
     <div className="py-48 px-2 flex flex-col justify-center items-start" data-testid="empty-cart-message">
-      <Heading
-        level="h1"
-        className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
+      <h1 className="font-display text-4xl text-olive font-light tracking-wide mb-4">
+        Your Cart
+      </h1>
+      <p className="text-bark/60 text-sm leading-relaxed mb-8 max-w-[32rem]">
+        Your bag is empty. Explore our collection of sustainably made hemp jackets and find your next favourite piece.
+      </p>
+      <LocalizedClientLink
+        href="/store"
+        className="inline-block py-3 px-8 bg-terracotta text-white text-sm tracking-widest uppercase rounded hover:bg-terracotta/90 transition-colors duration-200"
       >
-        Cart
-      </Heading>
-      <Text className="text-base-regular mt-4 mb-6 max-w-[32rem]">
-        You don&apos;t have anything in your cart. Let&apos;s change that, use
-        the link below to start browsing our products.
-      </Text>
-      <div>
-        <InteractiveLink href="/store">Explore products</InteractiveLink>
-      </div>
+        Shop Hemp Jackets
+      </LocalizedClientLink>
     </div>
   )
 }

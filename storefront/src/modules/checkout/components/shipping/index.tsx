@@ -2,7 +2,7 @@
 
 import { RadioGroup } from "@headlessui/react"
 import { CheckCircleSolid } from "@medusajs/icons"
-import { Button, Heading, Text, clx } from "@medusajs/ui"
+import { clx } from "@medusajs/ui"
 
 import Divider from "@modules/common/components/divider"
 import Radio from "@modules/common/components/radio"
@@ -60,36 +60,33 @@ const Shipping: React.FC<ShippingProps> = ({
   }, [isOpen])
 
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
       <div className="flex flex-row items-center justify-between mb-6">
-        <Heading
-          level="h2"
+        <h2
           className={clx(
-            "flex flex-row text-3xl-regular gap-x-2 items-baseline",
+            "flex flex-row font-display text-2xl text-olive font-light gap-x-2 items-center",
             {
-              "opacity-50 pointer-events-none select-none":
+              "opacity-40 pointer-events-none select-none":
                 !isOpen && cart.shipping_methods?.length === 0,
             }
           )}
         >
           Delivery
           {!isOpen && (cart.shipping_methods?.length ?? 0) > 0 && (
-            <CheckCircleSolid />
+            <CheckCircleSolid className="text-terracotta" />
           )}
-        </Heading>
+        </h2>
         {!isOpen &&
           cart?.shipping_address &&
           cart?.billing_address &&
           cart?.email && (
-            <Text>
-              <button
-                onClick={handleEdit}
-                className="text-ui-fg-interactive hover:text-ui-fg-interactive-hover"
-                data-testid="edit-delivery-button"
-              >
-                Edit
-              </button>
-            </Text>
+            <button
+              onClick={handleEdit}
+              className="text-sm text-bark/60 hover:text-terracotta underline underline-offset-2 transition-colors duration-200"
+              data-testid="edit-delivery-button"
+            >
+              Edit
+            </button>
           )}
       </div>
       {isOpen ? (
@@ -103,10 +100,12 @@ const Shipping: React.FC<ShippingProps> = ({
                     value={option.id}
                     data-testid="delivery-option-radio"
                     className={clx(
-                      "flex items-center justify-between text-small-regular cursor-pointer py-4 border rounded-rounded px-8 mb-2 hover:shadow-borders-interactive-with-active",
+                      "flex items-center justify-between text-sm cursor-pointer py-4 border px-6 mb-2 transition-colors duration-200",
                       {
-                        "border-ui-border-interactive":
+                        "border-terracotta bg-terracotta/5":
                           option.id === selectedShippingMethod?.id,
+                        "border-sage/30 hover:border-sage/60":
+                          option.id !== selectedShippingMethod?.id,
                       }
                     )}
                   >
@@ -114,9 +113,9 @@ const Shipping: React.FC<ShippingProps> = ({
                       <Radio
                         checked={option.id === selectedShippingMethod?.id}
                       />
-                      <span className="text-base-regular">{option.name}</span>
+                      <span className="text-bark">{option.name}</span>
                     </div>
-                    <span className="justify-self-end text-ui-fg-base">
+                    <span className="text-bark font-medium">
                       {convertToLocale({
                         amount: option.amount!,
                         currency_code: cart?.currency_code,
@@ -133,32 +132,28 @@ const Shipping: React.FC<ShippingProps> = ({
             data-testid="delivery-option-error-message"
           />
 
-          <Button
-            size="large"
-            className="mt-6"
+          <button
+            className="mt-6 w-full py-4 bg-terracotta text-white text-sm tracking-widest uppercase rounded hover:bg-terracotta/90 transition-colors duration-200 disabled:bg-sage/40 disabled:cursor-not-allowed"
             onClick={handleSubmit}
-            isLoading={isLoading}
             disabled={!cart.shipping_methods?.[0]}
             data-testid="submit-delivery-option-button"
           >
-            Continue to payment
-          </Button>
+            {isLoading ? "Loading..." : "Continue to payment"}
+          </button>
         </div>
       ) : (
         <div>
-          <div className="text-small-regular">
+          <div className="text-sm text-bark/70">
             {cart && (cart.shipping_methods?.length ?? 0) > 0 && (
               <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                  Method
-                </Text>
-                <Text className="txt-medium text-ui-fg-subtle">
+                <p className="font-medium text-bark mb-1">Method</p>
+                <p>
                   {selectedShippingMethod?.name}{" "}
                   {convertToLocale({
                     amount: selectedShippingMethod?.amount!,
                     currency_code: cart?.currency_code,
                   })}
-                </Text>
+                </p>
               </div>
             )}
           </div>

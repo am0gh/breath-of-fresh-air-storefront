@@ -78,10 +78,35 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
           <LocalizedClientLink
-            className="text-cream hover:text-sage transition-colors duration-200 text-sm"
+            className="relative flex items-center text-cream hover:text-sage transition-colors duration-200"
             href="/cart"
             data-testid="nav-cart-link"
-          >{`Cart (${totalItems})`}</LocalizedClientLink>
+            aria-label={`Cart, ${totalItems} item${totalItems !== 1 ? "s" : ""}`}
+          >
+            {/* Shopping bag icon */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <line x1="3" x2="21" y1="6" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            {/* Item count badge */}
+            {totalItems > 0 && (
+              <span className="absolute -top-1.5 -right-2 bg-terracotta text-white text-[10px] font-medium leading-none rounded-full w-4 h-4 flex items-center justify-center">
+                {totalItems > 9 ? "9+" : totalItems}
+              </span>
+            )}
+          </LocalizedClientLink>
         </Popover.Button>
         <Transition
           show={cartDropdownOpen}
@@ -168,7 +193,7 @@ const CartDropdown = ({
                 </div>
                 <div className="p-4 flex flex-col gap-y-4 text-small-regular">
                   <div className="flex items-center justify-between">
-                    <span className="text-ui-fg-base font-semibold">
+                    <span className="text-bark font-semibold">
                       Subtotal{" "}
                       <span className="font-normal">(excl. taxes)</span>
                     </span>

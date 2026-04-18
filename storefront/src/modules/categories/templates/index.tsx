@@ -38,7 +38,7 @@ export default function CategoryTemplate({
         <div className="flex flex-row mb-8 text-2xl-semi gap-4">
           {parents &&
             parents.map((parent) => (
-              <span key={parent.id} className="text-ui-fg-subtle">
+              <span key={parent.id} className="text-bark/60">
                 <LocalizedClientLink
                   className="mr-4 hover:text-black"
                   href={`/categories/${parent.handle}`}

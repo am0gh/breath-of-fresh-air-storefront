@@ -2,6 +2,47 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* ===== Breath of Fresh Air — Override Medusa UI CSS variables ===== */
+:root {
+  /* Background fields */
+  --bg-field: #F5F0E8;
+  --bg-field-hover: #EDE8DF;
+  --bg-subtle: #F5F0E8;
+  --bg-base: #F5F0E8;
+  --bg-component: #F5F0E8;
+
+  /* Foreground (text) */
+  --fg-base: #2C2A1E;
+  --fg-subtle: #2C2A1E99;
+  --fg-muted: #818E83;
+  --fg-interactive: #B6592E;
+  --fg-interactive-hover: #9e4a24;
+  --fg-on-color: #F5F0E8;
+  --fg-disabled: #818E8399;
+
+  /* Border */
+  --border-base: rgba(129, 142, 131, 0.4);
+  --border-strong: rgba(129, 142, 131, 0.7);
+  --border-interactive: #B6592E;
+
+  /* Button - primary */
+  --button-neutral: #F5F0E8;
+  --button-neutral-hover: #EDE8DF;
+  --button-neutral-pressed: #DDD7CC;
+  --button-inverted: #42481D;
+  --button-inverted-hover: #333d17;
+  --button-inverted-pressed: #2a3213;
+  --button-danger: #B91C1C;
+  --button-danger-hover: #991B1B;
+
+  /* Focus */
+  --focus-ring: #42481D;
+
+  /* Shadows for interactive borders */
+  --shadow-borders-interactive-with-active: 0 0 0 1px #B6592E;
+  --shadow-borders-interactive-with-focus: 0 0 0 2px #42481D;
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -35,9 +76,9 @@
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    border: 1px solid #212121;
-    -webkit-text-fill-color: #212121;
-    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    border: 1px solid rgba(129, 142, 131, 0.4);
+    -webkit-text-fill-color: #2C2A1E;
+    -webkit-box-shadow: 0 0 0px 1000px #F5F0E8 inset;
     transition: background-color 5000s ease-in-out 0s;
   }
 

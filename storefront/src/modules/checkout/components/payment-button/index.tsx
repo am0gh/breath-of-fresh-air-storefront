@@ -1,6 +1,4 @@
 "use client"
-
-import { Button } from "@medusajs/ui"
 import { OnApproveActions, OnApproveData } from "@paypal/paypal-js"
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js"
 import { useElements, useStripe } from "@stripe/react-stripe-js"
@@ -59,7 +57,14 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
         />
       )
     default:
-      return <Button disabled>Select a payment method</Button>
+      return (
+        <button
+          disabled
+          className="w-full py-4 bg-sage/40 text-bark/40 text-sm tracking-widest uppercase rounded cursor-not-allowed"
+        >
+          Select a payment method
+        </button>
+      )
   }
 }
 
@@ -72,13 +77,14 @@ const GiftCardPaymentButton = () => {
   }
 
   return (
-    <Button
+    <button
       onClick={handleOrder}
-      isLoading={submitting}
+      disabled={submitting}
+      className="w-full py-4 bg-terracotta text-white text-sm tracking-widest uppercase rounded hover:bg-terracotta/90 transition-colors duration-200 disabled:bg-sage/40 disabled:cursor-not-allowed"
       data-testid="submit-order-button"
     >
-      Place order
-    </Button>
+      {submitting ? "Processing..." : "Place Order"}
+    </button>
   )
 }
 
@@ -172,15 +178,14 @@ const StripePaymentButton = ({
 
   return (
     <>
-      <Button
-        disabled={disabled || notReady}
+      <button
+        disabled={disabled || notReady || submitting}
         onClick={handlePayment}
-        size="large"
-        isLoading={submitting}
+        className="w-full py-4 bg-terracotta text-white text-sm tracking-widest uppercase rounded hover:bg-terracotta/90 transition-colors duration-200 disabled:bg-sage/40 disabled:cursor-not-allowed"
         data-testid={dataTestId}
       >
-        Place order
-      </Button>
+        {submitting ? "Processing..." : "Place Order"}
+      </button>
       <ErrorMessage
         error={errorMessage}
         data-testid="stripe-payment-error-message"
@@ -281,15 +286,14 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
 
   return (
     <>
-      <Button
-        disabled={notReady}
-        isLoading={submitting}
+      <button
+        disabled={notReady || submitting}
         onClick={handlePayment}
-        size="large"
+        className="w-full py-4 bg-terracotta text-white text-sm tracking-widest uppercase rounded hover:bg-terracotta/90 transition-colors duration-200 disabled:bg-sage/40 disabled:cursor-not-allowed"
         data-testid="submit-order-button"
       >
-        Place order
-      </Button>
+        {submitting ? "Processing..." : "Place Order"}
+      </button>
       <ErrorMessage
         error={errorMessage}
         data-testid="manual-payment-error-message"

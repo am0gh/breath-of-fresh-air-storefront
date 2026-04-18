@@ -80,6 +80,46 @@ export async function login(_currentState: unknown, formData: FormData) {
   }
 }
 
+export async function requestPasswordReset(
+  _currentState: unknown,
+  formData: FormData
+) {
+  const email = formData.get("email") as string
+
+  try {
+    await sdk.auth.resetPassword("customer", "emailpass", {
+      identifier: email,
+    })
+    return { success: true, error: null }
+  } catch (error: any) {
+    return { success: false, error: "Unable to send reset email. Please check the address and try again." }
+  }
+}
+
+export async function resetCustomerPassword(
+  _currentState: unknown,
+  formData: FormData
+) {
+  const token = formData.get("token") as string
+  const password = formData.get("password") as string
+  const confirmPassword = formData.get("confirm_password") as string
+
+  if (password !== confirmPassword) {
+    return { success: false, error: "Passwords do not match." }
+  }
+
+  if (password.length < 8) {
+    return { success: false, error: "Password must be at least 8 characters." }
+  }
+
+  try {
+    await sdk.auth.updateProvider("customer", "emailpass", { password }, token)
+    return { success: true, error: null }
+  } catch (error: any) {
+    return { success: false, error: "Unable to reset password. Your link may have expired." }
+  }
+}
+
 export async function signout(countryCode: string) {
   await sdk.auth.logout()
   removeAuthToken()

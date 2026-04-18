@@ -37,7 +37,7 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
               onClick={() => updateOption(option.title ?? "", v ?? "")}
               key={v}
               className={clx(
-                "px-4 py-2 text-sm rounded-none border transition-all duration-150 min-w-[3rem]",
+                "px-4 py-2 text-sm rounded border transition-all duration-150 min-w-[3rem]",
                 isSelected
                   ? "border-terracotta text-bark bg-cream font-medium"
                   : "border-sage/40 text-bark/60 bg-transparent hover:border-sage hover:text-bark"

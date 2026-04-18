@@ -2,7 +2,7 @@
 
 import repeat from "@lib/util/repeat"
 import { HttpTypes } from "@medusajs/types"
-import { Table, clx } from "@medusajs/ui"
+import { clx } from "@medusajs/ui"
 
 import Item from "@modules/cart/components/item"
 import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
@@ -16,26 +16,24 @@ const ItemsPreviewTemplate = ({ items }: ItemsTemplateProps) => {
 
   return (
     <div
-      className={clx({
-        "pl-[1px] overflow-y-scroll overflow-x-hidden no-scrollbar max-h-[420px]":
+      className={clx("mt-4", {
+        "overflow-y-scroll overflow-x-hidden no-scrollbar max-h-[420px]":
           hasOverflow,
       })}
     >
-      <Table>
-        <Table.Body data-testid="items-table">
-          {items
-            ? items
-                .sort((a, b) => {
-                  return (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1
-                })
-                .map((item) => {
-                  return <Item key={item.id} item={item} type="preview" />
-                })
-            : repeat(5).map((i) => {
-                return <SkeletonLineItem key={i} />
-              })}
-        </Table.Body>
-      </Table>
+      <div data-testid="items-table">
+        {items
+          ? items
+              .sort((a, b) => {
+                return (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1
+              })
+              .map((item) => {
+                return <Item key={item.id} item={item} type="preview" />
+              })
+          : repeat(5).map((i) => {
+              return <SkeletonLineItem key={i} />
+            })}
+      </div>
     </div>
   )
 }

@@ -19,9 +19,9 @@ const OrderSummary = ({ order }: OrderSummaryProps) => {
 
   return (
     <div>
-      <h2 className="text-base-semi">Order Summary</h2>
-      <div className="text-small-regular text-ui-fg-base my-2">
-        <div className="flex items-center justify-between text-base-regular text-ui-fg-base mb-2">
+      <h2 className="font-display text-2xl text-olive font-light mb-4">Order Summary</h2>
+      <div className="text-sm text-bark/70">
+        <div className="flex items-center justify-between font-medium text-bark mb-2">
           <span>Subtotal</span>
           <span>{getAmount(order.subtotal)}</span>
         </div>
@@ -29,13 +29,13 @@ const OrderSummary = ({ order }: OrderSummaryProps) => {
           {order.discount_total > 0 && (
             <div className="flex items-center justify-between">
               <span>Discount</span>
-              <span>- {getAmount(order.discount_total)}</span>
+              <span className="text-terracotta">- {getAmount(order.discount_total)}</span>
             </div>
           )}
           {order.gift_card_total > 0 && (
             <div className="flex items-center justify-between">
-              <span>Discount</span>
-              <span>- {getAmount(order.gift_card_total)}</span>
+              <span>Gift card</span>
+              <span className="text-terracotta">- {getAmount(order.gift_card_total)}</span>
             </div>
           )}
           <div className="flex items-center justify-between">
@@ -47,8 +47,8 @@ const OrderSummary = ({ order }: OrderSummaryProps) => {
             <span>{getAmount(order.tax_total)}</span>
           </div>
         </div>
-        <div className="h-px w-full border-b border-gray-200 border-dashed my-4" />
-        <div className="flex items-center justify-between text-base-regular text-ui-fg-base mb-2">
+        <div className="h-px w-full border-b border-sage/20 my-4" />
+        <div className="flex items-center justify-between font-semibold text-olive text-base">
           <span>Total</span>
           <span>{getAmount(order.total)}</span>
         </div>

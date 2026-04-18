@@ -1,5 +1,4 @@
 import { HttpTypes } from "@medusajs/types"
-import { Table, Text } from "@medusajs/ui"
 
 import LineItemOptions from "@modules/common/components/line-item-options"
 import LineItemPrice from "@modules/common/components/line-item-price"
@@ -12,38 +11,30 @@ type ItemProps = {
 
 const Item = ({ item }: ItemProps) => {
   return (
-    <Table.Row className="w-full" data-testid="product-row">
-      <Table.Cell className="!pl-0 p-4 w-24">
-        <div className="flex w-16">
-          <Thumbnail thumbnail={item.thumbnail} size="square" />
-        </div>
-      </Table.Cell>
+    <div className="flex items-start gap-x-4 py-4 border-b border-sage/20 last:border-b-0" data-testid="product-row">
+      <div className="w-16 shrink-0">
+        <Thumbnail thumbnail={item.thumbnail} size="square" />
+      </div>
 
-      <Table.Cell className="text-left">
-        <Text
-          className="txt-medium-plus text-ui-fg-base"
-          data-testid="product-name"
-        >
+      <div className="flex flex-1 flex-col gap-y-1">
+        <p className="font-display text-base text-olive font-light" data-testid="product-name">
           {item.title}
-        </Text>
+        </p>
         {item.variant && (
           <LineItemOptions variant={item.variant} data-testid="product-variant" />
         )}
-      </Table.Cell>
+      </div>
 
-      <Table.Cell className="!pr-0">
-        <span className="!pr-0 flex flex-col items-end h-full justify-center">
-          <span className="flex gap-x-1 ">
-            <Text className="text-ui-fg-muted">
-              <span data-testid="product-quantity">{item.quantity}</span>x{" "}
-            </Text>
-            <LineItemUnitPrice item={item} style="tight" />
-          </span>
-
+      <div className="shrink-0 flex flex-col items-end justify-center text-sm">
+        <span className="flex gap-x-1 text-bark/60">
+          <span data-testid="product-quantity">{item.quantity}</span>x{" "}
+          <LineItemUnitPrice item={item} style="tight" />
+        </span>
+        <span className="font-medium text-bark">
           <LineItemPrice item={item} style="tight" />
         </span>
-      </Table.Cell>
-    </Table.Row>
+      </div>
+    </div>
   )
 }
 

@@ -47,34 +47,20 @@ async function getRegionMap() {
 }
 
 /**
- * Fetches regions from Medusa and sets the region cookie.
- * @param request
- * @param response
+ * Returns the fixed DEFAULT_REGION prefix for all requests.
+ * This site uses a single generic EU region prefix rather than
+ * per-country routing. When /nl or /de versions are added later,
+ * geo-detection logic can be restored here.
  */
 async function getCountryCode(
-  request: NextRequest,
-  regionMap: Map<string, HttpTypes.StoreRegion | number>
+  _request: NextRequest,
+  _regionMap: Map<string, HttpTypes.StoreRegion | number>
 ) {
   try {
-    let countryCode
-
-    const vercelCountryCode = request.headers
-      .get("x-vercel-ip-country")
-      ?.toLowerCase()
-
-    const urlCountryCode = request.nextUrl.pathname.split("/")[1]?.toLowerCase()
-
-    if (urlCountryCode && regionMap.has(urlCountryCode)) {
-      countryCode = urlCountryCode
-    } else if (vercelCountryCode && regionMap.has(vercelCountryCode)) {
-      countryCode = vercelCountryCode
-    } else if (regionMap.has(DEFAULT_REGION)) {
-      countryCode = DEFAULT_REGION
-    } else if (regionMap.keys().next().value) {
-      countryCode = regionMap.keys().next().value
-    }
-
-    return countryCode
+    // Always return the configured default region prefix ("eu").
+    // The actual Medusa region is resolved in getRegion() by falling
+    // back to the first available region when this code isn't in the map.
+    return DEFAULT_REGION
   } catch (error) {
     if (process.env.NODE_ENV === "development") {
       console.error(
@@ -100,7 +86,7 @@ export async function middleware(request: NextRequest) {
   const countryCode = regionMap && (await getCountryCode(request, regionMap))
 
   const urlHasCountryCode =
-    countryCode && request.nextUrl.pathname.split("/")[1].includes(countryCode)
+    countryCode && request.nextUrl.pathname.split("/")[1] === countryCode
 
   // check if one of the country codes is in the url
   if (

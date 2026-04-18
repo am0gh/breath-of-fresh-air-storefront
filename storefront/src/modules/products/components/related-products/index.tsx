@@ -58,10 +58,10 @@ export default async function RelatedProducts({
   return (
     <div className="product-page-constraint">
       <div className="flex flex-col items-center text-center mb-16">
-        <span className="text-base-regular text-gray-600 mb-6">
+        <span className="text-sm text-bark/50 uppercase tracking-widest mb-6">
           Related products
         </span>
-        <p className="text-2xl-regular text-ui-fg-base max-w-lg">
+        <p className="font-display text-2xl text-olive font-light max-w-lg">
           You might also want to check out these products.
         </p>
       </div>

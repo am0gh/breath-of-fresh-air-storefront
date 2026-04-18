@@ -344,9 +344,10 @@ export async function setAddresses(currentState: unknown, formData: FormData) {
     return e.message
   }
 
-  redirect(
-    `/${formData.get("shipping_address.country_code")}/checkout?step=delivery`
-  )
+  // Use the configured region prefix (default: "eu") so the URL never
+  // switches to a per-country path after address submission.
+  const regionPrefix = process.env.NEXT_PUBLIC_DEFAULT_REGION || "eu"
+  redirect(`/${regionPrefix}/checkout?step=delivery`)
 }
 
 export async function placeOrder() {
@@ -364,10 +365,9 @@ export async function placeOrder() {
     .catch(medusaError)
 
   if (cartRes?.type === "order") {
-    const countryCode =
-      cartRes.order.shipping_address?.country_code?.toLowerCase()
+    const regionPrefix = process.env.NEXT_PUBLIC_DEFAULT_REGION || "eu"
     await removeCartId()
-    redirect(`/${countryCode}/order/confirmed/${cartRes?.order.id}`)
+    redirect(`/${regionPrefix}/order/confirmed/${cartRes?.order.id}`)
   }
 
   return cartRes.cart

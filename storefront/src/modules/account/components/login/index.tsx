@@ -1,4 +1,4 @@
-import { useFormState } from "react-dom"
+import { useActionState } from "react"
 
 import { LOGIN_VIEW } from "@modules/account/templates/login-template"
 import Input from "@modules/common/components/input"
@@ -11,19 +11,19 @@ type Props = {
 }
 
 const Login = ({ setCurrentView }: Props) => {
-  const [message, formAction] = useFormState(login, null)
+  const [message, formAction] = useActionState(login, null)
 
   return (
     <div
-      className="max-w-sm w-full flex flex-col items-center"
+      className="w-full flex flex-col"
       data-testid="login-page"
     >
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-8">
-        Sign in to access an enhanced shopping experience.
+      <h1 className="font-display text-3xl text-olive font-light tracking-wide mb-2">Welcome back</h1>
+      <p className="text-bark/60 text-sm mb-8">
+        Sign in to your account for a better experience.
       </p>
       <form className="w-full" action={formAction}>
-        <div className="flex flex-col w-full gap-y-2">
+        <div className="flex flex-col w-full gap-y-3">
           <Input
             label="Email"
             name="email"
@@ -42,22 +42,31 @@ const Login = ({ setCurrentView }: Props) => {
             data-testid="password-input"
           />
         </div>
+        <div className="flex justify-end mt-2">
+          <button
+            type="button"
+            onClick={() => setCurrentView(LOGIN_VIEW.FORGOT_PASSWORD)}
+            className="text-sm text-bark/50 hover:text-terracotta underline underline-offset-2 transition-colors"
+            data-testid="forgot-password-link"
+          >
+            Forgot password?
+          </button>
+        </div>
         <ErrorMessage error={message} data-testid="login-error-message" />
         <SubmitButton data-testid="sign-in-button" className="w-full mt-6">
           Sign in
         </SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
+      <p className="text-center text-bark/60 text-sm mt-6">
         Not a member?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
-          className="underline"
+          className="text-terracotta hover:text-terracotta/80 underline underline-offset-2 transition-colors"
           data-testid="register-button"
         >
-          Join us
+          Create an account
         </button>
-        .
-      </span>
+      </p>
     </div>
   )
 }

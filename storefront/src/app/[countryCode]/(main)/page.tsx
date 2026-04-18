@@ -100,33 +100,6 @@ export default async function Home({
           opacity: 1; transform: translateY(0);
         }
 
-        /* Footer spacer / closing brand bar */
-        .brand-bar {
-          background-color: #2C2A1E;
-          padding: 2rem clamp(1.5rem, 6vw, 5rem);
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 1rem;
-        }
-        .brand-bar-name {
-          font-family: 'Cormorant Garamond', Georgia, serif;
-          font-size: 0.9rem;
-          font-weight: 300;
-          letter-spacing: 0.28em;
-          text-transform: uppercase;
-          color: rgba(245, 240, 232, 0.45);
-        }
-        .brand-bar-tagline {
-          font-family: 'DM Sans', sans-serif;
-          font-size: 0.62rem;
-          font-weight: 300;
-          letter-spacing: 0.22em;
-          text-transform: uppercase;
-          color: rgba(178, 89, 46, 0.6);
-        }
-
         @media (prefers-reduced-motion: reduce) {
           .fp-header,
           .fp-products {
@@ -164,7 +137,7 @@ export default async function Home({
                 </a>
               </div>
               <div className="fp-products">
-                <ul className="grid grid-cols-1 small:grid-cols-2 medium:grid-cols-3 gap-x-6 gap-y-20">
+                <ul className="grid grid-cols-1 small:grid-cols-2 medium:grid-cols-3 gap-x-6 gap-y-10">
                   <FeaturedProducts collections={collections} region={region} />
                 </ul>
               </div>
@@ -173,11 +146,6 @@ export default async function Home({
         </RevealWrapper>
       )}
 
-      {/* Closing brand bar */}
-      <div className="brand-bar" aria-hidden="true">
-        <span className="brand-bar-name">Breath of Fresh Air</span>
-        <span className="brand-bar-tagline">Wear the Earth · Feel the Air</span>
-      </div>
     </>
   )
 }

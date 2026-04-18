@@ -1,22 +1,24 @@
-import { Button, Heading, Text } from "@medusajs/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
 const SignInPrompt = () => {
   return (
-    <div className="bg-white flex items-center justify-between">
+    <div className="flex items-center justify-between py-2">
       <div>
-        <Heading level="h2" className="txt-xlarge">
+        <h2 className="font-display text-xl text-olive font-light">
           Already have an account?
-        </Heading>
-        <Text className="txt-medium text-ui-fg-subtle mt-2">
-          Sign in for a better experience.
-        </Text>
+        </h2>
+        <p className="text-bark/60 text-sm mt-1">
+          Sign in for a faster checkout experience.
+        </p>
       </div>
       <div>
         <LocalizedClientLink href="/account">
-          <Button variant="secondary" className="h-10" data-testid="sign-in-button">
+          <button
+            className="border border-olive text-olive text-sm px-6 py-2 hover:bg-olive hover:text-cream transition-colors duration-200"
+            data-testid="sign-in-button"
+          >
             Sign in
-          </Button>
+          </button>
         </LocalizedClientLink>
       </div>
     </div>

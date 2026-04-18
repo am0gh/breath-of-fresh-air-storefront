@@ -34,7 +34,7 @@ const NewsletterForm = () => {
       />
       <button
         type="submit"
-        className="bg-terracotta text-white text-xs tracking-widest uppercase px-6 py-3 hover:bg-terracotta/90 transition-colors w-full"
+        className="bg-terracotta text-white text-xs tracking-widest uppercase px-6 py-3 rounded hover:bg-terracotta/90 transition-colors w-full"
       >
         Subscribe
       </button>

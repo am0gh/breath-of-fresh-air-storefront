@@ -1,4 +1,4 @@
-import { Container, Text } from "@medusajs/ui"
+
 
 import Thumbnail from "@modules/products/components/thumbnail"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
@@ -25,9 +25,9 @@ const Hit = ({ hit }: HitProps) => {
       href={`/products/${hit.handle}`}
       data-testid="search-result"
     >
-      <Container
+      <div
         key={hit.id}
-        className="flex sm:flex-col gap-2 w-full p-4 shadow-elevation-card-rest hover:shadow-elevation-card-hover items-center sm:justify-center"
+        className="flex sm:flex-col gap-2 w-full p-4 border border-sage/20 hover:border-sage/40 bg-cream transition-colors items-center sm:justify-center"
       >
         <Thumbnail
           thumbnail={hit.thumbnail}
@@ -36,15 +36,15 @@ const Hit = ({ hit }: HitProps) => {
         />
         <div className="flex flex-col justify-between group">
           <div className="flex flex-col">
-            <Text
-              className="text-ui-fg-subtle"
+            <span
+              className="text-sm text-bark/70"
               data-testid="search-result-title"
             >
               {hit.title}
-            </Text>
+            </span>
           </div>
         </div>
-      </Container>
+      </div>
     </LocalizedClientLink>
   )
 }
