@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import { PencilSquare as Edit, Trash } from "@medusajs/icons"
-import { Button, clx } from "@medusajs/ui"
+import { Button, Heading, Text, clx } from "@medusajs/ui"
 
 import useToggleState from "@lib/hooks/use-toggle-state"
 import CountrySelect from "@modules/checkout/components/country-select"
@@ -86,7 +86,7 @@ const EditAddress: React.FC<EditAddressProps> = ({
               data-testid="address-company"
             >
               {address.company}
-            </Text>
+            </span>
           )}
           <div className="flex flex-col text-left text-sm text-bark/60 mt-2">
             <span data-testid="address-address">
