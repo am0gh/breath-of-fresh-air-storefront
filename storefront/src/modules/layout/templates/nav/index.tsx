@@ -13,14 +13,38 @@ export default async function Nav() {
     <div className="sticky top-0 inset-x-0 z-50 group">
       <header className="relative h-16 mx-auto duration-200 bg-olive">
         <nav className="content-container flex items-center justify-between w-full h-full">
-          {/* Left: brand logo */}
+          {/* Left: Schwaas wordmark */}
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="font-display text-xl tracking-wide text-cream hover:text-cream/80 transition-colors duration-200"
+              className="flex flex-col items-start leading-none hover:opacity-80 transition-opacity duration-200 gap-[2px]"
               data-testid="nav-store-link"
             >
-              Breath of Fresh Air
+              <span
+                style={{
+                  fontFamily: "'Noto Sans Devanagari', sans-serif",
+                  fontSize: "10px",
+                  letterSpacing: "0.06em",
+                  color: "#7B9C8C",
+                  fontWeight: 300,
+                  lineHeight: 1,
+                }}
+              >
+                श्वास
+              </span>
+              <span
+                style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "20px",
+                  letterSpacing: "0.14em",
+                  color: "#F2EFE8",
+                  fontWeight: 400,
+                  textTransform: "uppercase",
+                  lineHeight: 1,
+                }}
+              >
+                Schwaas
+              </span>
             </LocalizedClientLink>
           </div>
 

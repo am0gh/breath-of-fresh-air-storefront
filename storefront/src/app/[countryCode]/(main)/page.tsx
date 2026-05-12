@@ -10,9 +10,9 @@ import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
 export const metadata: Metadata = {
-  title: "Breath of Fresh Air — Hemp Jackets",
+  title: "Schwaas — Breath of Fresh Air",
   description:
-    "Sustainable hemp jackets crafted for the conscious explorer. Built to last forever, open to change.",
+    "Schwaas (Sanskrit: श्वास — breath). Natural hemp clothing for the conscious explorer. Shirts, tees, and more — built to last, made to be worn.",
 }
 
 export default async function Home({
@@ -30,7 +30,7 @@ export default async function Home({
         /* ── Featured products section ── */
         .fp-section {
           position: relative;
-          background-color: #F5F0E8;
+          background-color: #F2EFE8;
           padding: clamp(4rem, 8vh, 7rem) 0;
           overflow: hidden;
         }
@@ -38,7 +38,7 @@ export default async function Home({
           position: absolute;
           top: 0; left: 8%; right: 8%;
           height: 1px;
-          background: linear-gradient(90deg, transparent, #42481D 30%, #B6592E 70%, transparent);
+          background: linear-gradient(90deg, transparent, #2D4A3E 30%, #C0843E 70%, transparent);
           opacity: 0.18;
         }
         .fp-inner {
@@ -65,12 +65,12 @@ export default async function Home({
           font-family: 'Cormorant Garamond', Georgia, serif;
           font-weight: 300;
           font-size: clamp(2rem, 4vw, 3.4rem);
-          color: #42481D;
+          color: #2D4A3E;
           line-height: 1.1;
         }
         .fp-headline em {
           font-style: italic;
-          color: #B6592E;
+          color: #C0843E;
         }
         .fp-view-all {
           font-family: 'DM Sans', sans-serif;
@@ -78,17 +78,17 @@ export default async function Home({
           font-weight: 400;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: #42481D;
+          color: #2D4A3E;
           text-decoration: none;
-          border-bottom: 1px solid rgba(66, 72, 29, 0.35);
+          border-bottom: 1px solid rgba(45, 74, 62, 0.35);
           padding-bottom: 2px;
           transition: border-color 0.3s ease, color 0.3s ease;
           white-space: nowrap;
           align-self: center;
         }
         .fp-view-all:hover {
-          color: #B6592E;
-          border-color: #B6592E;
+          color: #C0843E;
+          border-color: #C0843E;
         }
         .fp-products {
           opacity: 0;
@@ -125,7 +125,7 @@ export default async function Home({
       {/* 5 ── Featured Products */}
       {collections && region && (
         <RevealWrapper>
-          <section className="fp-section" aria-label="Featured jackets">
+          <section className="fp-section" aria-label="Featured pieces">
             <div className="fp-rule" aria-hidden="true" />
             <div className="fp-inner">
               <div className="fp-header">
@@ -133,7 +133,7 @@ export default async function Home({
                   The&nbsp;<em>Collection</em>
                 </h2>
                 <a href="/store" className="fp-view-all">
-                  View all jackets
+                  View all pieces
                 </a>
               </div>
               <div className="fp-products">

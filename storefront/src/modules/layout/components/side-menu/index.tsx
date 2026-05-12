@@ -91,7 +91,7 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                         />
                       </div>
                       <p className="text-sm text-cream/60">
-                        © {new Date().getFullYear()} Breath of Fresh Air. All rights
+                        © {new Date().getFullYear()} Schwaas. All rights
                         reserved.
                       </p>
                     </div>

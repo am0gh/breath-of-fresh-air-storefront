@@ -12,7 +12,7 @@ import { getCustomer } from "@lib/data/customer"
 
 export const metadata: Metadata = {
   title: "Profile",
-  description: "View and edit your Breath of Fresh Air profile.",
+  description: "View and edit your Schwaas profile.",
 }
 
 export default async function Profile() {

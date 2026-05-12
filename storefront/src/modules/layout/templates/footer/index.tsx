@@ -17,13 +17,17 @@ export default async function Footer() {
           <div className="flex flex-col gap-y-4">
             <LocalizedClientLink
               href="/"
-              className="font-display text-2xl text-cream hover:text-cream/80 transition-colors"
+              className="flex flex-col items-start gap-[2px] hover:opacity-80 transition-opacity"
             >
-              Breath of Fresh Air
+              <span style={{ fontFamily: "'Noto Sans Devanagari', sans-serif", fontSize: "10px", letterSpacing: "0.06em", color: "#7B9C8C", fontWeight: 300, lineHeight: 1 }}>
+                श्वास
+              </span>
+              <span style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "20px", letterSpacing: "0.14em", color: "#F2EFE8", fontWeight: 400, textTransform: "uppercase", lineHeight: 1 }}>
+                Schwaas
+              </span>
             </LocalizedClientLink>
             <p className="text-sage text-sm leading-relaxed max-w-[240px]">
-              Sustainable hemp clothing for the conscious explorer. Wear the
-              earth, lightly.
+              Natural hemp clothing for the conscious explorer. Breath of Fresh Air.
             </p>
           </div>
 
@@ -38,7 +42,7 @@ export default async function Footer() {
                   href="/store"
                   className="text-cream/70 text-sm hover:text-cream transition-colors"
                 >
-                  Shop Jackets
+                  Shop the Collection
                 </LocalizedClientLink>
               </li>
               {product_categories?.slice(0, 4).map((c) => {
@@ -91,7 +95,7 @@ export default async function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col small:flex-row justify-between items-start small:items-center py-6 gap-y-2">
           <p className="text-sage/50 text-xs">
-            © {new Date().getFullYear()} Breath of Fresh Air. All rights reserved.
+            © {new Date().getFullYear()} Schwaas. All rights reserved.
           </p>
           <p className="text-sage/30 text-xs">
             Sustainably made · Carbon neutral shipping

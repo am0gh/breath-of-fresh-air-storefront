@@ -4,9 +4,9 @@ import { SortOptions } from "@modules/store/components/refinement-list/sort-prod
 import StoreTemplate from "@modules/store/templates"
 
 export const metadata: Metadata = {
-  title: "The Collection — Breath of Fresh Air",
+  title: "The Collection — Schwaas",
   description:
-    "Sustainably crafted hemp jackets. Built to outlast fast fashion, shaped by the land.",
+    "Natural hemp clothing. Shirts, tees, and essentials built to outlast fast fashion, shaped by the land.",
 }
 
 type Params = {

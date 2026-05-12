@@ -21,17 +21,22 @@ export default function CheckoutLayout({
           </LocalizedClientLink>
           <LocalizedClientLink
             href="/"
-            className="font-display text-xl text-cream hover:text-cream/80 transition-colors duration-200"
+            className="flex flex-col items-center gap-[2px] hover:opacity-80 transition-opacity duration-200"
             data-testid="store-link"
           >
-            Breath of Fresh Air
+            <span style={{ fontFamily: "'Noto Sans Devanagari', sans-serif", fontSize: "9px", letterSpacing: "0.06em", color: "#7B9C8C", fontWeight: 300, lineHeight: 1 }}>
+              श्वास
+            </span>
+            <span style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "18px", letterSpacing: "0.14em", color: "#F2EFE8", fontWeight: 400, textTransform: "uppercase", lineHeight: 1 }}>
+              Schwaas
+            </span>
           </LocalizedClientLink>
           <div className="flex-1 basis-0" />
         </nav>
       </div>
       <div className="relative" data-testid="checkout-container">{children}</div>
       <div className="py-6 w-full flex items-center justify-center border-t border-sage/20">
-        <p className="text-sage/50 text-xs">© {new Date().getFullYear()} Breath of Fresh Air. Sustainably made.</p>
+        <p className="text-sage/50 text-xs">© {new Date().getFullYear()} Schwaas. Sustainably made.</p>
       </div>
     </div>
   )

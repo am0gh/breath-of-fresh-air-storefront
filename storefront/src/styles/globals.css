@@ -2,45 +2,45 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* ===== Breath of Fresh Air — Override Medusa UI CSS variables ===== */
+/* ===== Schwaas — Override Medusa UI CSS variables ===== */
 :root {
   /* Background fields */
-  --bg-field: #F5F0E8;
-  --bg-field-hover: #EDE8DF;
-  --bg-subtle: #F5F0E8;
-  --bg-base: #F5F0E8;
-  --bg-component: #F5F0E8;
+  --bg-field: #F2EFE8;
+  --bg-field-hover: #E8E5DD;
+  --bg-subtle: #F2EFE8;
+  --bg-base: #F2EFE8;
+  --bg-component: #F2EFE8;
 
   /* Foreground (text) */
-  --fg-base: #2C2A1E;
-  --fg-subtle: #2C2A1E99;
-  --fg-muted: #818E83;
-  --fg-interactive: #B6592E;
-  --fg-interactive-hover: #9e4a24;
-  --fg-on-color: #F5F0E8;
-  --fg-disabled: #818E8399;
+  --fg-base: #1B2D24;
+  --fg-subtle: #1B2D2499;
+  --fg-muted: #7B9C8C;
+  --fg-interactive: #C0843E;
+  --fg-interactive-hover: #a86e31;
+  --fg-on-color: #F2EFE8;
+  --fg-disabled: #7B9C8C99;
 
   /* Border */
-  --border-base: rgba(129, 142, 131, 0.4);
-  --border-strong: rgba(129, 142, 131, 0.7);
-  --border-interactive: #B6592E;
+  --border-base: rgba(123, 156, 140, 0.4);
+  --border-strong: rgba(123, 156, 140, 0.7);
+  --border-interactive: #C0843E;
 
   /* Button - primary */
-  --button-neutral: #F5F0E8;
-  --button-neutral-hover: #EDE8DF;
-  --button-neutral-pressed: #DDD7CC;
-  --button-inverted: #42481D;
-  --button-inverted-hover: #333d17;
-  --button-inverted-pressed: #2a3213;
+  --button-neutral: #F2EFE8;
+  --button-neutral-hover: #E8E5DD;
+  --button-neutral-pressed: #DAD7CE;
+  --button-inverted: #2D4A3E;
+  --button-inverted-hover: #213a2e;
+  --button-inverted-pressed: #182c22;
   --button-danger: #B91C1C;
   --button-danger-hover: #991B1B;
 
   /* Focus */
-  --focus-ring: #42481D;
+  --focus-ring: #2D4A3E;
 
   /* Shadows for interactive borders */
-  --shadow-borders-interactive-with-active: 0 0 0 1px #B6592E;
-  --shadow-borders-interactive-with-focus: 0 0 0 2px #42481D;
+  --shadow-borders-interactive-with-active: 0 0 0 1px #C0843E;
+  --shadow-borders-interactive-with-focus: 0 0 0 2px #2D4A3E;
 }
 
 @layer utilities {
@@ -76,9 +76,9 @@
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    border: 1px solid rgba(129, 142, 131, 0.4);
-    -webkit-text-fill-color: #2C2A1E;
-    -webkit-box-shadow: 0 0 0px 1000px #F5F0E8 inset;
+    border: 1px solid rgba(123, 156, 140, 0.4);
+    -webkit-text-fill-color: #1B2D24;
+    -webkit-box-shadow: 0 0 0px 1000px #F2EFE8 inset;
     transition: background-color 5000s ease-in-out 0s;
   }
 

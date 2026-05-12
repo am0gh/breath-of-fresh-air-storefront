@@ -27,7 +27,7 @@ const StoreTemplate = ({
             className="font-display text-4xl text-olive font-light tracking-wide"
             data-testid="store-page-title"
           >
-            Hemp Jackets
+            Hemp Clothing
           </h1>
           <p className="text-sage mt-2 text-sm">
             Sustainably made. Built to last.

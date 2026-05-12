@@ -7,9 +7,9 @@ const benefits = [
     body: "Hemp fibre is three times stronger than cotton. Every season it wears in — never wearing out — growing more supple, more yours.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="24" cy="24" r="20" stroke="#42481D" strokeWidth="1" opacity="0.3" />
-        <path d="M24 8 L24 40 M14 18 L24 8 L34 18" stroke="#42481D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M16 30 L24 40 L32 30" stroke="#B6592E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
+        <circle cx="24" cy="24" r="20" stroke="#2D4A3E" strokeWidth="1" opacity="0.3" />
+        <path d="M24 8 L24 40 M14 18 L24 8 L34 18" stroke="#2D4A3E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16 30 L24 40 L32 30" stroke="#C0843E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
       </svg>
     ),
   },
@@ -19,9 +19,9 @@ const benefits = [
     body: "Naturally porous and moisture-wicking — cool when the sun is high, warm when layered. A climate system built into the cloth.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="24" cy="24" r="20" stroke="#42481D" strokeWidth="1" opacity="0.3" />
-        <path d="M24 14 C18 14 14 18 14 22 C14 28 20 32 24 38 C28 32 34 28 34 22 C34 18 30 14 24 14Z" stroke="#42481D" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
-        <path d="M20 22 C20 22 22 25 24 22 C26 19 28 22 28 22" stroke="#B6592E" strokeWidth="1.2" strokeLinecap="round" opacity="0.7"/>
+        <circle cx="24" cy="24" r="20" stroke="#2D4A3E" strokeWidth="1" opacity="0.3" />
+        <path d="M24 14 C18 14 14 18 14 22 C14 28 20 32 24 38 C28 32 34 28 34 22 C34 18 30 14 24 14Z" stroke="#2D4A3E" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+        <path d="M20 22 C20 22 22 25 24 22 C26 19 28 22 28 22" stroke="#C0843E" strokeWidth="1.2" strokeLinecap="round" opacity="0.7"/>
       </svg>
     ),
   },
@@ -31,9 +31,9 @@ const benefits = [
     body: "Hemp's natural UV-blocking and antimicrobial properties let you wear it further and wash it less. Protection without compromise.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="24" cy="24" r="20" stroke="#42481D" strokeWidth="1" opacity="0.3" />
-        <path d="M24 10 L36 15 L36 25 C36 32 30 38 24 40 C18 38 12 32 12 25 L12 15 Z" stroke="#42481D" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
-        <path d="M18 24 L22 28 L30 20" stroke="#B6592E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
+        <circle cx="24" cy="24" r="20" stroke="#2D4A3E" strokeWidth="1" opacity="0.3" />
+        <path d="M24 10 L36 15 L36 25 C36 32 30 38 24 40 C18 38 12 32 12 25 L12 15 Z" stroke="#2D4A3E" strokeWidth="1.5" fill="none" strokeLinejoin="round"/>
+        <path d="M18 24 L22 28 L30 20" stroke="#C0843E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
       </svg>
     ),
   },
@@ -43,10 +43,10 @@ const benefits = [
     body: "Unlike synthetics that degrade, hemp develops a patina. The creases, the fades, the softness — the story of a life well lived.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="24" cy="24" r="20" stroke="#42481D" strokeWidth="1" opacity="0.3" />
-        <path d="M14 34 Q19 20 24 24 Q29 28 34 14" stroke="#42481D" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-        <circle cx="14" cy="34" r="2.5" fill="#B6592E" opacity="0.7"/>
-        <circle cx="34" cy="14" r="2.5" fill="#42481D" opacity="0.5"/>
+        <circle cx="24" cy="24" r="20" stroke="#2D4A3E" strokeWidth="1" opacity="0.3" />
+        <path d="M14 34 Q19 20 24 24 Q29 28 34 14" stroke="#2D4A3E" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+        <circle cx="14" cy="34" r="2.5" fill="#C0843E" opacity="0.7"/>
+        <circle cx="34" cy="14" r="2.5" fill="#2D4A3E" opacity="0.5"/>
       </svg>
     ),
   },
@@ -61,7 +61,7 @@ export default function MaterialSection() {
           position: relative;
           width: 100%;
           min-height: 100svh;
-          background-color: #F5F0E8;
+          background-color: #F2EFE8;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -75,7 +75,7 @@ export default function MaterialSection() {
           position: absolute;
           top: 0; left: 8%; right: 8%;
           height: 1px;
-          background: linear-gradient(90deg, transparent, #42481D 30%, #B6592E 70%, transparent);
+          background: linear-gradient(90deg, transparent, #2D4A3E 30%, #C0843E 70%, transparent);
           opacity: 0.18;
         }
 
@@ -86,7 +86,7 @@ export default function MaterialSection() {
           font-weight: 300;
           font-size: clamp(18rem, 28vw, 34rem);
           line-height: 1;
-          color: #42481D;
+          color: #2D4A3E;
           opacity: 0.03;
           top: 50%;
           left: 50%;
@@ -116,7 +116,7 @@ export default function MaterialSection() {
           font-weight: 400;
           letter-spacing: 0.36em;
           text-transform: uppercase;
-          color: #B6592E;
+          color: #C0843E;
           opacity: 0;
           transform: translateY(16px);
           transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
@@ -129,7 +129,7 @@ export default function MaterialSection() {
           font-weight: 300;
           font-size: clamp(2.6rem, 5.5vw, 5.4rem);
           line-height: 1.06;
-          color: #42481D;
+          color: #2D4A3E;
           margin-top: 0.5rem;
           overflow: hidden;
         }
@@ -146,7 +146,7 @@ export default function MaterialSection() {
         }
         .mat-headline em {
           font-style: italic;
-          color: #B6592E;
+          color: #C0843E;
         }
 
         /* Benefits grid */
@@ -165,7 +165,7 @@ export default function MaterialSection() {
         .mat-card {
           padding: 2.4rem 2rem;
           background: transparent;
-          border: 1px solid rgba(66, 72, 29, 0.1);
+          border: 1px solid rgba(45, 74, 62, 0.1);
           display: flex;
           flex-direction: column;
           gap: 1.2rem;
@@ -183,8 +183,8 @@ export default function MaterialSection() {
           opacity: 1; transform: translateY(0);
         }
         .mat-card:hover {
-          background: rgba(66, 72, 29, 0.03);
-          border-color: rgba(66, 72, 29, 0.22);
+          background: rgba(45, 74, 62, 0.03);
+          border-color: rgba(45, 74, 62, 0.22);
         }
 
         .mat-card-icon {
@@ -197,14 +197,14 @@ export default function MaterialSection() {
           font-size: 0.75rem;
           font-weight: 300;
           letter-spacing: 0.18em;
-          color: #818E83;
+          color: #7B9C8C;
         }
 
         .mat-card-title {
           font-family: 'Cormorant Garamond', Georgia, serif;
           font-weight: 400;
           font-size: clamp(1.25rem, 2vw, 1.55rem);
-          color: #42481D;
+          color: #2D4A3E;
           line-height: 1.2;
         }
 
@@ -213,7 +213,7 @@ export default function MaterialSection() {
           font-size: 0.85rem;
           font-weight: 300;
           line-height: 1.75;
-          color: #818E83;
+          color: #7B9C8C;
         }
 
         /* Reduced motion */

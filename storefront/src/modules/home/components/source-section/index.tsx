@@ -15,7 +15,7 @@ export default function SourceSection() {
           position: relative;
           width: 100%;
           min-height: 100svh;
-          background-color: #2C2A1E;
+          background-color: #1B2D24;
           display: flex;
           align-items: center;
           overflow: hidden;
@@ -39,7 +39,7 @@ export default function SourceSection() {
           width: clamp(420px, 55vw, 780px);
           height: clamp(420px, 55vw, 780px);
           border-radius: 50%;
-          border: 1px solid rgba(245, 240, 232, 0.07);
+          border: 1px solid rgba(242, 239, 232, 0.07);
           right: clamp(-280px, -18vw, -120px);
           top: 50%;
           transform: translateY(-50%);
@@ -51,7 +51,7 @@ export default function SourceSection() {
           width: clamp(260px, 34vw, 500px);
           height: clamp(260px, 34vw, 500px);
           border-radius: 50%;
-          border: 1px solid rgba(178, 89, 46, 0.18);
+          border: 1px solid rgba(192, 132, 62, 0.18);
           right: clamp(-180px, -10vw, -60px);
           top: 50%;
           transform: translateY(-50%);
@@ -90,7 +90,7 @@ export default function SourceSection() {
           width: clamp(220px, 28vw, 380px);
           height: clamp(220px, 28vw, 380px);
           border-radius: 50%;
-          background: radial-gradient(circle at 35% 35%, #5c6227, #42481D 55%, #2C2A1E 100%);
+          background: radial-gradient(circle at 35% 35%, #3d6b59, #2D4A3E 55%, #1B2D24 100%);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -118,7 +118,7 @@ export default function SourceSection() {
           position: absolute;
           inset: -28px;
           border-radius: 50%;
-          border: 1px dashed rgba(178, 89, 46, 0.3);
+          border: 1px dashed rgba(192, 132, 62, 0.3);
           animation: src-orbit-spin 30s linear infinite;
         }
         .src-orbit-dot {
@@ -127,7 +127,7 @@ export default function SourceSection() {
           left: -4px;
           width: 7px; height: 7px;
           border-radius: 50%;
-          background: #B6592E;
+          background: #C0843E;
           transform: translateY(-50%);
           opacity: 0.7;
         }
@@ -149,7 +149,7 @@ export default function SourceSection() {
           font-weight: 400;
           letter-spacing: 0.36em;
           text-transform: uppercase;
-          color: #B6592E;
+          color: #C0843E;
           opacity: 0;
           transform: translateY(18px);
           transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
@@ -163,7 +163,7 @@ export default function SourceSection() {
           font-weight: 300;
           font-size: clamp(2.8rem, 6vw, 5.8rem);
           line-height: 1.04;
-          color: #F5F0E8;
+          color: #F2EFE8;
           overflow: hidden;
         }
         .src-headline-line {
@@ -180,7 +180,7 @@ export default function SourceSection() {
         }
         .src-headline em {
           font-style: italic;
-          color: #B6592E;
+          color: #C0843E;
         }
 
         .src-body {
@@ -188,7 +188,7 @@ export default function SourceSection() {
           font-size: clamp(0.9rem, 1.3vw, 1.05rem);
           font-weight: 300;
           line-height: 1.8;
-          color: rgba(245, 240, 232, 0.62);
+          color: rgba(242, 239, 232, 0.62);
           max-width: 480px;
           opacity: 0;
           transform: translateY(18px);
@@ -204,7 +204,7 @@ export default function SourceSection() {
           flex-wrap: wrap;
           gap: 0.5rem 2.5rem;
           padding-top: 1rem;
-          border-top: 1px solid rgba(245, 240, 232, 0.1);
+          border-top: 1px solid rgba(242, 239, 232, 0.1);
         }
         .src-stat {
           opacity: 0;
@@ -221,7 +221,7 @@ export default function SourceSection() {
           font-family: 'Cormorant Garamond', Georgia, serif;
           font-weight: 300;
           font-size: clamp(2rem, 3.5vw, 3rem);
-          color: #F5F0E8;
+          color: #F2EFE8;
           line-height: 1;
         }
         .src-stat-label {
@@ -229,7 +229,7 @@ export default function SourceSection() {
           font-size: 0.68rem;
           font-weight: 300;
           letter-spacing: 0.06em;
-          color: rgba(245, 240, 232, 0.45);
+          color: rgba(242, 239, 232, 0.45);
           margin-top: 0.2rem;
         }
 
@@ -268,13 +268,13 @@ export default function SourceSection() {
                 >
                   <path
                     d="M40 115 C40 115 5 75 5 40 C5 18 20 5 40 5 C60 5 75 18 75 40 C75 75 40 115 40 115Z"
-                    fill="#F5F0E8"
+                    fill="#F2EFE8"
                   />
-                  <line x1="40" y1="5"  x2="40" y2="115" stroke="#818E83" strokeWidth="0.8" opacity="0.5" />
-                  <line x1="40" y1="38" x2="64" y2="24"  stroke="#818E83" strokeWidth="0.6" opacity="0.4" />
-                  <line x1="40" y1="52" x2="67" y2="40"  stroke="#818E83" strokeWidth="0.6" opacity="0.4" />
-                  <line x1="40" y1="38" x2="16" y2="24"  stroke="#818E83" strokeWidth="0.6" opacity="0.4" />
-                  <line x1="40" y1="52" x2="13" y2="40"  stroke="#818E83" strokeWidth="0.6" opacity="0.4" />
+                  <line x1="40" y1="5"  x2="40" y2="115" stroke="#7B9C8C" strokeWidth="0.8" opacity="0.5" />
+                  <line x1="40" y1="38" x2="64" y2="24"  stroke="#7B9C8C" strokeWidth="0.6" opacity="0.4" />
+                  <line x1="40" y1="52" x2="67" y2="40"  stroke="#7B9C8C" strokeWidth="0.6" opacity="0.4" />
+                  <line x1="40" y1="38" x2="16" y2="24"  stroke="#7B9C8C" strokeWidth="0.6" opacity="0.4" />
+                  <line x1="40" y1="52" x2="13" y2="40"  stroke="#7B9C8C" strokeWidth="0.6" opacity="0.4" />
                 </svg>
               </div>
             </div>

@@ -54,14 +54,14 @@ const Payment = ({
       style: {
         base: {
           fontFamily: "DM Sans, sans-serif",
-          color: "#2C2A1E",
+          color: "#1B2D24",
           fontSize: "14px",
           "::placeholder": {
-            color: "#818E83",
+            color: "#7B9C8C",
           },
         },
         invalid: {
-          color: "#B6592E",
+          color: "#C0843E",
         },
       },
       classes: {

@@ -3,19 +3,19 @@ import RevealWrapper from "@modules/home/components/reveal-wrapper"
 
 const pillars = [
   {
-    tag: "Adaptability",
-    title: "Velcro Panel System",
-    body: "Swap linings, add insulation, or change the look entirely. No needle required.",
+    tag: "Longevity",
+    title: "Wears In, Not Out",
+    body: "Hemp strengthens with every wash. The fibres soften over time, becoming more supple — more yours — with each wear.",
   },
   {
-    tag: "Hardware",
-    title: "Chain Attachment Points",
-    body: "Reinforced D-ring anchors across the body. Attach what matters. Remove what doesn't.",
+    tag: "Breathability",
+    title: "A Climate Built In",
+    body: "Hemp's natural porosity keeps you cool when it's warm and warm when it's cool. No synthetics. No compromise.",
   },
   {
-    tag: "Identity",
-    title: "Patch Attachment Zones",
-    body: "Reinforced zones built for badges, embroidery, and the marks that make it yours.",
+    tag: "Simplicity",
+    title: "Less, But Better",
+    body: "Clean lines, considered cuts, no excess. Clothing that works across every part of your life without trying.",
   },
 ]
 
@@ -28,7 +28,7 @@ export default function MissionSection() {
           position: relative;
           width: 100%;
           min-height: 100svh;
-          background-color: #42481D;
+          background-color: #2D4A3E;
           display: flex;
           align-items: center;
           overflow: hidden;
@@ -53,7 +53,7 @@ export default function MissionSection() {
           width: clamp(300px, 40vw, 580px);
           height: clamp(300px, 40vw, 580px);
           border-radius: 50%;
-          border: 1px solid rgba(245, 240, 232, 0.08);
+          border: 1px solid rgba(242, 239, 232, 0.08);
           bottom: clamp(-220px, -20vw, -120px);
           right: clamp(-180px, -14vw, -80px);
           pointer-events: none;
@@ -64,7 +64,7 @@ export default function MissionSection() {
           width: clamp(180px, 24vw, 360px);
           height: clamp(180px, 24vw, 360px);
           border-radius: 50%;
-          border: 1px solid rgba(178, 89, 46, 0.15);
+          border: 1px solid rgba(192, 132, 62, 0.15);
           bottom: clamp(-140px, -12vw, -60px);
           right: clamp(-100px, -8vw, -30px);
           pointer-events: none;
@@ -78,7 +78,7 @@ export default function MissionSection() {
           font-weight: 300;
           font-size: clamp(14rem, 22vw, 28rem);
           line-height: 1;
-          color: rgba(245, 240, 232, 0.04);
+          color: rgba(242, 239, 232, 0.04);
           bottom: -2rem;
           left: -1rem;
           pointer-events: none;
@@ -118,7 +118,7 @@ export default function MissionSection() {
           font-weight: 400;
           letter-spacing: 0.36em;
           text-transform: uppercase;
-          color: #B6592E;
+          color: #C0843E;
           opacity: 0;
           transform: translateY(16px);
           transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
@@ -132,7 +132,7 @@ export default function MissionSection() {
           font-weight: 300;
           font-size: clamp(2.8rem, 6vw, 6rem);
           line-height: 1.04;
-          color: #F5F0E8;
+          color: #F2EFE8;
           overflow: hidden;
         }
         .mis-headline-line {
@@ -149,7 +149,7 @@ export default function MissionSection() {
         }
         .mis-headline em {
           font-style: italic;
-          color: #B6592E;
+          color: #C0843E;
         }
 
         .mis-body {
@@ -157,7 +157,7 @@ export default function MissionSection() {
           font-size: clamp(0.88rem, 1.3vw, 1rem);
           font-weight: 300;
           line-height: 1.85;
-          color: rgba(245, 240, 232, 0.6);
+          color: rgba(242, 239, 232, 0.6);
           max-width: 460px;
           opacity: 0;
           transform: translateY(16px);
@@ -172,9 +172,9 @@ export default function MissionSection() {
           font-family: 'Cormorant Garamond', Georgia, serif;
           font-style: italic;
           font-size: clamp(1.1rem, 2vw, 1.4rem);
-          color: rgba(245, 240, 232, 0.35);
+          color: rgba(242, 239, 232, 0.35);
           line-height: 1.5;
-          border-left: 2px solid #B6592E;
+          border-left: 2px solid #C0843E;
           padding-left: 1.2rem;
           opacity: 0;
           transform: translateY(14px);
@@ -200,9 +200,9 @@ export default function MissionSection() {
           font-weight: 400;
           letter-spacing: 0.25em;
           text-transform: uppercase;
-          color: #F5F0E8;
+          color: #F2EFE8;
           text-decoration: none;
-          border: 1px solid rgba(245, 240, 232, 0.45);
+          border: 1px solid rgba(242, 239, 232, 0.45);
           padding: 0.9rem 2.5rem;
           position: relative;
           overflow: hidden;
@@ -212,12 +212,12 @@ export default function MissionSection() {
           content: '';
           position: absolute;
           inset: 0;
-          background: #F5F0E8;
+          background: #F2EFE8;
           transform: translateX(-101%);
           transition: transform 0.45s cubic-bezier(.16,1,.3,1);
         }
         .mis-cta:hover::before { transform: translateX(0); }
-        .mis-cta:hover { color: #42481D; border-color: #F5F0E8; }
+        .mis-cta:hover { color: #2D4A3E; border-color: #F2EFE8; }
         .mis-cta-text { position: relative; z-index: 1; }
 
         /* Right — pillars */
@@ -230,13 +230,13 @@ export default function MissionSection() {
 
         .mis-pillar {
           padding: 2rem 0;
-          border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+          border-bottom: 1px solid rgba(242, 239, 232, 0.1);
           opacity: 0;
           transform: translateX(30px);
           transition: opacity 0.85s cubic-bezier(.16,1,.3,1), transform 0.85s cubic-bezier(.16,1,.3,1),
                       border-color 0.3s ease;
         }
-        .mis-pillar:first-child { border-top: 1px solid rgba(245, 240, 232, 0.1); }
+        .mis-pillar:first-child { border-top: 1px solid rgba(242, 239, 232, 0.1); }
         .mis-pillar:nth-child(1) { transition-delay: 0.3s; }
         .mis-pillar:nth-child(2) { transition-delay: 0.44s; }
         .mis-pillar:nth-child(3) { transition-delay: 0.58s; }
@@ -244,7 +244,7 @@ export default function MissionSection() {
           opacity: 1; transform: translateX(0);
         }
         .mis-pillar:hover {
-          border-bottom-color: rgba(178, 89, 46, 0.35);
+          border-bottom-color: rgba(192, 132, 62, 0.35);
         }
 
         .mis-pillar-tag {
@@ -253,14 +253,14 @@ export default function MissionSection() {
           font-weight: 400;
           letter-spacing: 0.28em;
           text-transform: uppercase;
-          color: #B6592E;
+          color: #C0843E;
           margin-bottom: 0.5rem;
         }
         .mis-pillar-title {
           font-family: 'Cormorant Garamond', Georgia, serif;
           font-size: clamp(1.3rem, 2.2vw, 1.8rem);
           font-weight: 400;
-          color: #F5F0E8;
+          color: #F2EFE8;
           margin-bottom: 0.6rem;
           line-height: 1.2;
         }
@@ -269,7 +269,7 @@ export default function MissionSection() {
           font-size: 0.85rem;
           font-weight: 300;
           line-height: 1.7;
-          color: rgba(245, 240, 232, 0.5);
+          color: rgba(242, 239, 232, 0.5);
         }
 
         /* Reduced motion */
@@ -288,28 +288,28 @@ export default function MissionSection() {
       `}</style>
 
       <RevealWrapper>
-        <section className="mis-section" aria-label="Our mission — the forever jacket">
+        <section className="mis-section" aria-label="Our mission — clothing that gets better">
           <div className="mis-grain" aria-hidden="true" />
           <div className="mis-arc"   aria-hidden="true" />
           <div className="mis-arc-2" aria-hidden="true" />
-          <div className="mis-bg-word" aria-hidden="true">Forever</div>
+          <div className="mis-bg-word" aria-hidden="true">Breathe</div>
 
           <div className="mis-inner">
             {/* Left */}
             <div className="mis-left">
-              <span className="mis-eyebrow">Our Mission</span>
+              <span className="mis-eyebrow">Our Philosophy</span>
 
               <h2 className="mis-headline">
-                <span className="mis-headline-line">A Jacket</span>
-                <span className="mis-headline-line">Built to&nbsp;<em>Last</em></span>
-                <span className="mis-headline-line"><em>Forever.</em></span>
+                <span className="mis-headline-line">Clothing</span>
+                <span className="mis-headline-line">That Gets&nbsp;<em>Better</em></span>
+                <span className="mis-headline-line">With&nbsp;<em>Age.</em></span>
               </h2>
 
               <p className="mis-body">
                 Fast fashion ends in a landfill. We started with the opposite question:
-                what if a jacket could grow with you? Every Breath of Fresh Air jacket
-                is designed as an open system — built for the life you have now, and the
-                one you haven't lived yet.
+                what if your clothes could grow with you? Every Schwaas piece is made
+                from raw hemp — a fibre that strengthens, softens, and becomes more
+                itself the more you live in it.
               </p>
 
               <blockquote className="mis-manifesto">
@@ -324,7 +324,7 @@ export default function MissionSection() {
             </div>
 
             {/* Right — pillars */}
-            <div className="mis-right" role="list" aria-label="Jacket features">
+            <div className="mis-right" role="list" aria-label="Clothing pillars">
               {pillars.map((p) => (
                 <div key={p.title} className="mis-pillar" role="listitem">
                   <div className="mis-pillar-tag">{p.tag}</div>

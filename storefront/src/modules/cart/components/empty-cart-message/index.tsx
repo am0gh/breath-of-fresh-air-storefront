@@ -7,13 +7,13 @@ const EmptyCartMessage = () => {
         Your Cart
       </h1>
       <p className="text-bark/60 text-sm leading-relaxed mb-8 max-w-[32rem]">
-        Your bag is empty. Explore our collection of sustainably made hemp jackets and find your next favourite piece.
+        Your bag is empty. Explore our collection of naturally made hemp clothing and find your next favourite piece.
       </p>
       <LocalizedClientLink
         href="/store"
         className="inline-block py-3 px-8 bg-terracotta text-white text-sm tracking-widest uppercase rounded hover:bg-terracotta/90 transition-colors duration-200"
       >
-        Shop Hemp Jackets
+        Shop the Collection
       </LocalizedClientLink>
     </div>
   )
